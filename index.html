@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+  <body>
+    <div class="container">
+        <div class="row">
+          <div class="col-10">
+            <i class="fas fa-globe top-icons"></i>
+            <i class="fas fa-map-marker-alt top-icons" id="currentLocation" title="current location"></i>
+          </div>
+          <div class="col-2">
+            <i class="fas fa-toggle-on top-icons" title="dark mode"></i>
+            <i class="far fa-bookmark top-icons bookmark" title="favorite"></i>
+          </div>
+        </div>
+
+        <form id="citySearch">
+          <input type="search" placeholder="Search a city..." autocomplete="on" autofocus="on" class="search-bar" id="city" />
+          <button type="submit" class="search-icon">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+        <section class="today-info">
+        <div class="row">
+          <div class="col-2">
+            <ul>
+              <li><img class="today-icon" src="http://openweathermap.org/img/wn/10d@2x.png" id="todayIcon"></li>
+            </ul>
+          </div>
+          <div class="col-6 column-2">
+            <ul>
+              <li><h1 class="city" id="cityName">Toronto</h1></li>
+              <li id="dateAndTime"></li>
+              <li>Feels like: <span id="feelslike">0</span>ºC</li>
+              <li><section class="current-state" id="description">rainy</section></li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul>
+              <li>
+                <h2 class="current-weather" id="temp">5</h2>
+              </li>
+              <li><p class="high-low"><i class="fas fa-sort-up high" id="tempHigh">6°c </i> <i class="fas fa-sort-down low" id="tempLow">2°c</i></p></li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul class="column-4">
+              <li class="unit"><a href="#" class="unit-name" id="c-unit">ºC </a>|<a href="#" class="unit-name" id="f-unit"> ºF</a></li>
+              <section class="extra-info">
+               <!-- <li>Precipitation: 40%</li> -->
+                <li>Humidity: <span id="humidity">67</span>%</li>
+                <li >Wind: <span id="wind">24 </span> km/h</li>
+            </ul>
+          </div>
+        </section class="future-info">
+        <hr />
+        <section>
+        <div class="future-info">
+        <div class="row">
+          <div class="col-2">
+            <ul>
+              <li class="future-day">Tue</li>
+              <li><i class="fas fa-cloud-sun future-icon"></i></li>
+              <li class="future-degree">7° | 3°</li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul>
+              <li class="future-day">Wed</li>
+              <li><i class="fas fa-cloud-rain future-icon"></i></li>
+              <li class="future-degree">13° | 8°</li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul>
+              <li class="future-day">Thu</li>
+              <li><i class="fas fa-cloud-rain future-icon"></i></li>
+              <li class="future-degree">9° | 1°</li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul>
+              <li class="future-day">Fri</li>
+              <li><i class="fas fa-cloud-sun future-icon"></i></li>
+              <li class="future-degree">6° | 0°</li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul>
+              <li class="future-day">Sat</li>
+              <li><i class="fas fa-cloud-sun future-icon"></i></li>
+              <li class="future-degree">6° | 3°</li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul>
+              <li class="future-day">Sun</li>
+              <li><i class="fas fa-cloud-showers-heavy future-icon"></i></li>
+              <li class="future-degree">7° | 3°</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+        <div class="row">
+          <div class="col-5 update" id="update">↻ Updated 5 mins ago</div>
+          <div class="col-7">
+            <a href="https://www.linkedin.com/in/parmida-sazegari" target="_blank"><i class="fab fa-linkedin bottom-icons linkedin"></i></a>
+            <a href="https://www.instagram.com/parmida._.s/" target="_blank"><i class="fab fa-instagram bottom-icons instagram"></i></a>
+            <a href="https://www.parmidaa.sazegari@gmail.com" target="_blank"><i class="fas fa-envelope-square bottom-icons gmail"></i></a>
+            <a href="https://github.com/Parmida79/weather-app" target="_blank"><i class="fab fa-github bottom-icons github"></i></a>
+          </div>
+      </div>
+      <script src="src/index.js"></script>
+  </body>
+</html>

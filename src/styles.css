@@ -1,0 +1,186 @@
+html {
+  background-color: white;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(
+    401px at 50.6% -0.3%,
+    rgba(252, 243, 243, 0.31) 1.2%,
+    rgb(139, 211, 235) 100.2%
+  );
+  padding: 30px 40px;
+  border: 1px solid rgba(192, 192, 192, 0.678);
+  border-radius: 8px;
+  box-shadow: 10px 10px 10px rgb(139, 139, 139);
+}
+
+ul {
+  list-style: none;
+}
+
+.top-icons {
+  font-size: 30px;
+  padding: 30px 10px;
+}
+
+.top-icons:hover {
+  color: white;
+}
+
+.search-bar {
+  margin: 50px 0 60px 80px;
+  padding: 10px 20px;
+  width: 75%;
+  border-radius: 20px;
+}
+
+.search-icon {
+  border: 2px inset rgba(105, 104, 104, 0.699);
+  border-radius: 15px;
+  background-color: white;
+  padding: 9px 12px;
+}
+
+.today-icon {
+  width: 160px;
+  height: 160px;
+  padding-right: 10px;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.current-state {
+  font-size: 18px;
+  padding: 9px 0;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.current-weather {
+  font-size: 80px;
+  line-height: 1;
+}
+
+.high-low {
+  font-size: 19px;
+  padding: auto;
+  font-weight: 400;
+}
+
+.unit {
+  font-size: 28px;
+  font-weight: 600;
+  padding-bottom: 19px;
+}
+
+.unit-name {
+  text-decoration: none;
+  color: #0f6172d7;
+}
+
+.extra-info {
+  font-size: 15px;
+}
+
+.today-info {
+  margin: 60px auto;
+}
+
+.future-info {
+  margin: 40px auto 70px;
+  transition: all 0.3s ease-in-out;
+}
+
+.future-info:hover {
+  background-color: rgba(56, 150, 179, 0.212);
+  border-radius: 8px;
+}
+
+.future-day {
+  font-size: 20px;
+  margin: 40px auto 10px 4px;
+}
+
+.future-icon {
+  font-size: 40px;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 15px 1px;
+}
+
+.future-icon:hover {
+  color: rgb(253, 231, 215);
+}
+
+.future-degree {
+  font-size: 18px;
+  margin: 10px auto 40px;
+}
+
+.update {
+  font-size: 14px;
+}
+
+.bottom-icons {
+  font-size: 24px;
+  margin: auto 3px;
+  color: rgb(0, 0, 0);
+  padding: 3px;
+}
+
+.linkedin:hover {
+  background-color: white;
+  color: #0077b5;
+  padding: 2px;
+}
+
+.instagram:hover {
+  color: white;
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  border-radius: 4px;
+}
+
+.gmail:hover {
+  background-color: white;
+  color: #fd0429;
+  padding: 2px;
+}
+
+.github:hover {
+  color: white;
+  background-color: black;
+}
+
+.city {
+  padding-right: 30px;
+  margin: auto;
+  padding-bottom: 14px;
+}
+
+.column-4 {
+  margin: 6px -40px 0 -40px;
+}
+
+.column-2 {
+  margin-left: -40px;
+  margin-right: 28px;
+}
+
+.high {
+  color: #e2175a;
+}
+
+.low {
+  color: #2d56c9;
+}
