@@ -45,7 +45,7 @@ ul {
 }
 
 .today-icon {
-  width: 160px;
+  width: 170px;
   height: 160px;
   padding-right: 10px;
   margin-left: -30px;
@@ -165,6 +165,7 @@ ul {
   padding-right: 30px;
   margin: auto;
   padding-bottom: 14px;
+  font-weight: 700;
 }
 
 .column-2 {
