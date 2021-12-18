@@ -9,7 +9,7 @@ body {
   background: radial-gradient(
     401px at 50.6% -0.3%,
     rgba(252, 243, 243, 0.31) 1.2%,
-    rgb(139, 211, 235) 100.2%
+    rgba(87, 195, 231, 0.808) 100.2%
   );
   padding: 30px 40px;
   border: 1px solid rgba(192, 192, 192, 0.678);
@@ -71,9 +71,10 @@ ul {
 }
 
 .unit {
-  font-size: 28px;
+  position: relative;
+  top: -40px;
+  font-size: 24px;
   font-weight: 600;
-  padding-bottom: 19px;
 }
 
 .unit-name {
@@ -82,7 +83,7 @@ ul {
 }
 
 .extra-info {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .today-info {
@@ -166,13 +167,20 @@ ul {
   padding-bottom: 14px;
 }
 
-.column-4 {
-  margin: 6px -40px 0 -40px;
+.column-2 {
+  margin-left: -30px;
+  margin-right: 28px;
 }
 
-.column-2 {
-  margin-left: -40px;
-  margin-right: 28px;
+.column-3 {
+  margin-right: -20px;
+}
+
+.column-4 {
+  padding: 0;
+  position: relative;
+  left: -10px;
+  top: 58px;
 }
 
 .high {
