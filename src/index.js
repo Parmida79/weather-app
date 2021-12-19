@@ -36,12 +36,11 @@ month = [
 ];
 
 let dateAndTime = document.querySelector("#dateAndTime");
-dateAndTime.innerHTML = `${hour}:${minute} ${day[now.getDay()]} ${date} ${
-  month[now.getMonth()]
-}`;
 
 let update = document.querySelector("#update");
-update.innerHTML = `↻ Updated at ${hour}:${minute}`;
+update.innerHTML = `↻ Updated at ${hour}:${minute} on ${
+  day[now.getDay()]
+} ${date} ${month[now.getMonth()]}`;
 
 // search engine
 let apiKey = "46fa9b2a7a670b1f86d7ab4f5f7ed552";

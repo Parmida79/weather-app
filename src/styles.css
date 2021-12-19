@@ -1,11 +1,11 @@
 html {
   background-color: white;
-  max-width: 1000px;
+  max-width: 950px;
   margin: 30px auto;
   padding: 0;
 }
 
-body {
+.weather-app {
   background: radial-gradient(
     401px at 50.6% -0.3%,
     rgba(252, 243, 243, 0.31) 1.2%,
@@ -13,8 +13,8 @@ body {
   );
   padding: 30px 40px;
   border: 1px solid rgba(192, 192, 192, 0.678);
-  border-radius: 8px;
-  box-shadow: 10px 10px 10px rgb(139, 139, 139);
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(139, 139, 139, 0.747);
 }
 
 ul {
@@ -31,43 +31,41 @@ ul {
 }
 
 .search-bar {
-  margin: 50px 0 60px 80px;
-  padding: 10px 20px;
+  margin: 50px 0 30px 80px;
+  padding: 8px 20px;
   width: 75%;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .search-icon {
   border: 2px inset rgba(105, 104, 104, 0.699);
   border-radius: 15px;
   background-color: white;
-  padding: 9px 12px;
+  padding: 8px 12px;
 }
 
 .today-icon {
   width: 170px;
   height: 160px;
-  padding-right: 10px;
-  margin-left: -30px;
+  margin-left: -50px;
   margin-top: -30px;
 }
 
 .current-state {
-  font-size: 18px;
-  padding: 9px 0;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: capitalize;
+  color: rgba(54, 54, 54, 0.836);
 }
 
 .current-weather {
-  font-size: 80px;
-  line-height: 1;
+  font-size: 72px;
 }
 
 .high-low {
   font-size: 19px;
   padding: auto;
   font-weight: 400;
+  padding-left: 10px;
 }
 
 .unit {
@@ -82,16 +80,12 @@ ul {
   color: #0f6172d7;
 }
 
-.extra-info {
-  font-size: 16px;
-}
-
 .today-info {
   margin: 60px auto;
 }
 
 .future-info {
-  margin: 40px auto 70px;
+  margin: 20px auto;
   transition: all 0.3s ease-in-out;
 }
 
@@ -121,8 +115,9 @@ ul {
   margin: 10px auto 40px;
 }
 
-.update {
+#update {
   font-size: 14px;
+  color: rgba(68, 68, 68, 0.788);
 }
 
 .bottom-icons {
@@ -130,6 +125,10 @@ ul {
   margin: auto 3px;
   color: rgb(0, 0, 0);
   padding: 3px;
+}
+
+.developersInfo {
+  text-align: center;
 }
 
 .linkedin:hover {
@@ -174,14 +173,15 @@ ul {
 }
 
 .column-3 {
-  margin-right: -20px;
+  padding-left: 64px;
 }
 
 .column-4 {
   padding: 0;
   position: relative;
   left: -10px;
-  top: 58px;
+  font-size: 15px;
+  top: 64px;
 }
 
 .high {

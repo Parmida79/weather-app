@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="src/styles.css" />
     </head>
   <body>
+    <div class="weather-app">
     <div class="container">
         <div class="row">
           <div class="col-10">
@@ -29,7 +30,7 @@
         </div>
 
         <form id="citySearch">
-          <input type="search" placeholder="Search a city..." autocomplete="on" autofocus="on" class="search-bar" id="city" />
+          <input type="search" placeholder="Search a city..." autocomplete="off" autofocus="on" class="search-bar" id="city" />
           <button type="submit" class="search-icon">
             <i class="fas fa-search"></i>
           </button>
@@ -42,15 +43,14 @@
               <li><img class="today-icon" src="http://openweathermap.org/img/wn/10d@2x.png" id="todayIcon"></li>
             </ul>
           </div>
-          <div class="col-5 column-2">
+          <div class="col-4 column-2">
             <ul>
               <li><h1 class="city" id="cityName">Toronto</h1></li>
-              <li id="dateAndTime"></li>
               <li>Feels like: <span id="feelslike">0</span>ºC</li>
-              <li><section class="current-state" id="description">rainy</section></li>
+              <li class="current-state" id="description">rainy</li>
             </ul>
           </div>
-          <div class="col-3 column-3">
+          <div class="col-4 column-3">
             <ul>
               <li>
                 <h2 class="current-weather"><strong id="temp">5</strong><span class="unit"><a href="#" class="unit-name" id="c-unit">ºC </a>|<a href="#" class="unit-name" id="f-unit"> ºF</a></span></h2></li>
@@ -59,16 +59,14 @@
           </div>
           <div class="col-2">
             <ul class="column-4">
-              <section class="extra-info">
                <!-- <li>Precipitation: 40%</li> -->
                 <li>Humidity: <span id="humidity">67</span>%</li>
                 <li >Wind: <span id="wind">24 </span> km/h</li>
             </ul>
           </div>
-        </section class="future-info">
+        </section>
         <hr />
-        <section>
-        <div class="future-info">
+      <div class="future-info">
         <div class="row">
           <div class="col-2">
             <ul>
@@ -113,17 +111,19 @@
             </ul>
           </div>
         </div>
-      </section>
-        <div class="row">
-          <div class="col-5 update" id="update">↻ Updated 5 mins ago</div>
-          <div class="col-7">
+      </div>
+          <p id="update">↻ Updated 5 mins ago</p>
+  </div>
+</div>
+<br>
+          <div class="developersInfo">
             <a href="https://www.linkedin.com/in/parmida-sazegari" target="_blank"><i class="fab fa-linkedin bottom-icons linkedin"></i></a>
             <a href="https://www.instagram.com/parmida._.s/" target="_blank"><i class="fab fa-instagram bottom-icons instagram"></i></a>
             <a href="https://www.parmidaa.sazegari@gmail.com" target="_blank"><i class="fas fa-envelope-square bottom-icons gmail"></i></a>
             <a href="https://github.com/Parmida79/weather-app" target="_blank"><i class="fab fa-github bottom-icons github"></i></a>
           </div>
           <p class="coder"><a href="https://github.com/Parmida79/weather-app" class="source-code">Open-source code</a> by Parmida Sazegari</p>
-      </div>
+          
       <script src="src/index.js"></script>
   </body>
 </html>
