@@ -82,6 +82,35 @@ function cities(event) {
         "src",
         `http://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`
       );
+
+    let weatherState =
+      document.getElementById("weatherApp").style.backgroundImage;
+    let state = weather.data.weather[0].main;
+
+    if (state === "Snow") {
+      weatherState.url = "images/snowy.jpg";
+    } else if (state === "Clear") {
+      weatherState.url = "images/clear-sky.jpg";
+    } else if (state === "Clouds") {
+      weatherState.url = "images/clouds.jpg";
+    } else if (state === "Thunderstorm") {
+      weatherState.url = "images/thunderstorm.jpg";
+    } else if (state === "Drizzle" || state === "Rain") {
+      weatherState.url = "images/rainy.jpg";
+    } else if (state === "Mist" || state === "Haze" || state === "Fog") {
+      weatherState.url = "images/haze-fog-mist.jpg";
+    } else if (
+      state === "Smoke" ||
+      state === "Dust" ||
+      state === "Sand" ||
+      state === "Ash"
+    ) {
+      weatherState.url = "images/dust-ash-sand-smoke.jpg";
+    } else if (state === "Squall") {
+      weatherState.url = "images/stormy.JPG";
+    } else if (state === "Tornado") {
+      weatherState.url = "images/tornado.jpg";
+    }
   }
 
   axios.get(apiUrlCity).then(showWeather);
