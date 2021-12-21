@@ -63,7 +63,8 @@ function cities(event) {
     document.querySelector("#feelslike").innerHTML = Math.round(
       weather.data.main.feels_like
     );
-    document.querySelector("#temp").innerHTML = Math.round(
+    let celsius = null;
+    celsius = document.querySelector("#temp").innerHTML = Math.round(
       weather.data.main.temp
     );
     document.querySelector("#tempHigh").innerHTML = Math.round(
@@ -82,6 +83,29 @@ function cities(event) {
         "src",
         `http://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`
       );
+
+    function displayFahrenheitTemp(temp) {
+      temp.preventDefault();
+      let temperature = document.querySelector("#temp");
+      celsiusLink.classList.remove("active");
+      fahrenheitLink.classList.add("active");
+      let fahrenheitTemp = (celsius * 9) / 5 + 32;
+      temperature.innerHTML = Math.round(fahrenheitTemp);
+    }
+
+    function displayCelsiusTemp(temp) {
+      temp.preventDefault();
+      celsiusLink.classList.add("active");
+      fahrenheitLink.classList.remove("active");
+      let temperature = document.querySelector("#temp");
+      temperature.innerHTML = Math.round(celsius);
+    }
+
+    let fahrenheitLink = document.querySelector("#fahrenheitLink");
+    fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+    let celsiusLink = document.querySelector("#celsiusLink");
+    celsiusLink.addEventListener("click", displayCelsiusTemp);
 
     let weatherState =
       document.getElementById("weatherApp").style.backgroundImage;

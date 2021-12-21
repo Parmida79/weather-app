@@ -11,7 +11,7 @@ html {
   border: 1px solid rgba(192, 192, 192, 0.678);
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(139, 139, 139, 0.747);
-  background-image: url('images/tornado.jpg');
+  background-image: url("images/tornado.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   /*background-attachment: fixed;*/
@@ -57,8 +57,17 @@ ul {
   text-transform: capitalize;
 }
 
-.current-weather {
+.current-temp {
   font-size: 72px;
+}
+
+.current-weather .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.current-weather .active:hover {
+  text-decoration: none;
 }
 
 .high-low {
@@ -185,7 +194,7 @@ ul {
 }
 
 .high {
-  color: #c4144e
+  color: #c4144e;
 }
 
 .low {
