@@ -11,10 +11,66 @@ html {
   border: 1px solid rgba(192, 192, 192, 0.678);
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(139, 139, 139, 0.747);
-  background-image: url("images/tornado.jpg");
+}
+
+/*weather conditions*/
+.tornado{
+  background-image: url("images/tornado.jpg");      /*tornado*/
   background-repeat: no-repeat;
   background-size: cover;
   /*background-attachment: fixed;*/
+}
+
+.clear-sky{
+  background-image: url("images/clear-sky.jpg");      /*clear sky*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.clouds{
+  background-image: url("images/clouds.jpg");      /*clouds*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dust{
+  background-image: url("images/dust-ash-sand-smoke.jpg");      /*dust*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.haze{
+  background-image: url("images/haze-fog-mist.jpg");      /*haze*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rainy{
+  background-image: url("images/rainy.jpg");      /*rainy*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.snowy{
+  background-image: url("images/snowy.jpg");      /*snowy*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.stormy{
+  background-image: url("images/stormy.jpg");      /*stormy*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.thunderstorm{
+  background-image: url("images/thunderstorm.jpg");      /*thunderstorm*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
 }
 
 ul {
@@ -126,7 +182,7 @@ ul {
 
 #update {
   font-size: 14px;
-  color: rgba(27, 27, 27, 0.925);
+  background-color: rgba(255, 255, 255, 0.021);
 }
 
 .bottom-icons {
@@ -188,7 +244,7 @@ ul {
 .column-4 {
   padding: 0;
   position: relative;
-  left: -10px;
+  left: -20px;
   font-size: 15px;
   top: 63px;
 }
