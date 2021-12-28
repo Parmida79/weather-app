@@ -148,6 +148,9 @@ function cities(event) {
     todayInfo.innerHTML = todayState;
 
     let celsius = null;
+    celsius = document.querySelector("#temp").innerHTML = Math.round(
+      weather.data.main.temp
+    );
 
     function displayFahrenheitTemp(temp) {
       temp.preventDefault();
