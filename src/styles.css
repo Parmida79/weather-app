@@ -14,57 +14,57 @@ html {
 }
 
 /*weather conditions*/
-.tornado{
-  background-image: url("images/tornado.jpg");      /*tornado*/
+.tornado {
+  background-image: url("images/tornado.jpg"); /*tornado*/
   background-repeat: no-repeat;
   background-size: cover;
   /*background-attachment: fixed;*/
 }
 
-.clear-sky{
-  background-image: url("images/clear-sky.jpg");      /*clear sky*/
+.clear-sky {
+  background-image: url("images/clear-sky.jpg"); /*clear sky*/
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.clouds{
-  background-image: url("images/clouds.jpg");      /*clouds*/
+.clouds {
+  background-image: url("images/clouds.jpg"); /*clouds*/
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.dust{
-  background-image: url("images/dust-ash-sand-smoke.jpg");      /*dust*/
+.dust {
+  background-image: url("images/dust-ash-sand-smoke.jpg"); /*dust*/
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.haze{
-  background-image: url("images/haze-fog-mist.jpg");      /*haze*/
+.haze {
+  background-image: url("images/haze-fog-mist.jpg"); /*haze*/
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.rainy{
-  background-image: url("images/rainy.jpg");      /*rainy*/
+.rainy {
+  background-image: url("images/rainy.jpg"); /*rainy*/
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.snowy{
-  background-image: url("images/snowy.jpg");      /*snowy*/
+.snowy {
+  background-image: url("images/snowy.jpg"); /*snowy*/
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.stormy{
-  background-image: url("images/stormy.jpg");      /*stormy*/
+.stormy {
+  background-image: url("images/stormy.jpg"); /*stormy*/
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.thunderstorm{
-  background-image: url("images/thunderstorm.jpg");      /*thunderstorm*/
+.thunderstorm {
+  background-image: url("images/thunderstorm.jpg"); /*thunderstorm*/
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -148,13 +148,12 @@ ul {
 }
 
 .future-info {
-  text-align: center;
   margin: 20px auto;
   transition: all 0.3s ease-in-out;
   background-color: rgba(204, 202, 204, 0.397);
   border-radius: 20px;
+  font-weight: 600;
 }
-  
 
 .future-day {
   font-size: 20px;
@@ -175,7 +174,6 @@ ul {
 .future-degree {
   font-size: 18px;
   margin: 10px auto 40px;
-  font-weight: 700;
 }
 
 #update {
