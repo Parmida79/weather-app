@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="src/styles.css" />
     </head>
   <body>
-    <div class="tornado" id="weatherApp">
+    <div class="base" id="weatherApp">
     <div class="container">
         <div class="row">
           <div class="col-10">
@@ -36,33 +36,8 @@
           </button>
         </form>
 
-        <section class="today-info">
-        <div class="row">
-          <div class="col-2">
-            <ul>
-              <li><img class="today-icon" src="http://openweathermap.org/img/wn/10d@2x.png" id="todayIcon"></li>
-            </ul>
-          </div>
-          <div class="col-4 column-2">
-            <ul>
-              <li><h1 class="city" id="cityName">Toronto</h1></li>
-              <li>Feels like: <span id="feelslike">0</span>ºC</li>
-              <li class="current-state" id="description">rainy</li>
-            </ul>
-          </div>
-          <div class="col-4 column-3">
-            <ul>
-              <li>
-                <h2 class="current-weather"><strong class="current-temp" id="temp">5</strong><span class="unit"><a href="#" class="unit-name active" id="celsiusLink">ºC </a>|<a href="#" class="unit-name" id="fahrenheitLink"> ºF</a></span></h2></li>              <li><p class="high-low"><i class="fas fa-sort-up high"><span id="tempHigh">6</span>°c </i><br><i class="fas fa-sort-down low"><span id="tempLow">2</span>°c</i></p></li>
-            </ul>
-          </div>
-          <div class="col-2">
-            <ul class="column-4">
-               <!-- <li>Precipitation: 40%</li> -->
-                <li>Humidity: <span id="humidity">67</span>%</li>
-                <li >Wind: <span id="wind">24 </span> km/h</li>
-            </ul>
-          </div>
+        <section class="today-info" id="todayInfo">
+          <h3>Welcome!<br>🌍🗺 Please enter a city first 🗺🌍</h3>
         </section>
         <hr />
       <div class="future-info" id="forecast">

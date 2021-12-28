@@ -87,42 +87,67 @@ let apiKey = "46fa9b2a7a670b1f86d7ab4f5f7ed552";
 
 function cities(event) {
   event.preventDefault();
-  let cityName = document.querySelector("#cityName");
   let city = document.querySelector("#city").value;
   city = city.trim().toLowerCase();
   city = city.charAt(0).toUpperCase() + city.slice(1);
-  cityName.innerHTML = city;
-
+  
   let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   function showWeather(weather) {
     console.log(weather.data); //ignore it
 
-    document.querySelector("#description").innerHTML =
-      weather.data.weather[0].description;
-    document.querySelector("#feelslike").innerHTML = Math.round(
-      weather.data.main.feels_like
-    );
-    let celsius = null;
-    celsius = document.querySelector("#temp").innerHTML = Math.round(
-      weather.data.main.temp
-    );
-    document.querySelector("#tempHigh").innerHTML = Math.round(
+    let todayInfo = document.querySelector("#todayInfo");
+    let todayState = `<div class="row">`;
+    todayState =
+      todayState +
+      `
+          <div class="col-2">
+            <ul>
+              <li><img class="today-icon" src="http://openweathermap.org/img/wn/${
+                weather.data.weather[0].icon
+              }@2x.png" id="todayIcon"></li>
+            </ul>
+          </div>
+          <div class="col-4 column-2">
+            <ul>
+              <li><h1 class="city" id="cityName">${city}</h1></li>
+              <li>Feels like: <span id="feelslike">${Math.round(
+                weather.data.main.feels_like
+              )}</span>ºC</li>
+              <li class="current-state" id="description">${
+                weather.data.weather[0].description
+              }</li>
+            </ul>
+          </div>
+          <div class="col-4 column-3">
+            <ul>
+              <li>
+                <h2 class="current-weather"><strong class="current-temp" id="temp">${Math.round(
+                  weather.data.main.temp
+                )}</strong>
+    <span class="unit"><a href="#" class="unit-name active" id="celsiusLink">ºC </a>|<a href="#" class="unit-name" id="fahrenheitLink"> ºF</a></span></h2></li>
+    <li><p class="high-low"><i class="fas fa-sort-up high"><span id="tempHigh">${Math.round(
       weather.data.main.temp_max
-    );
-    document.querySelector("#tempLow").innerHTML = Math.round(
-      weather.data.main.temp_min
-    );
-    document.querySelector("#humidity").innerHTML = weather.data.main.humidity;
-    document.querySelector("#wind").innerHTML = Math.round(
-      weather.data.wind.speed
-    );
-    document
-      .querySelector("#todayIcon")
-      .setAttribute(
-        "src",
-        `http://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`
-      );
+    )}</span>°c </i><br><i class="fas fa-sort-down low"><span id="tempLow">${Math.round(
+        weather.data.main.temp_min
+      )}</span>°c</i></p></li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul class="column-4">
+               <!-- <li>Precipitation: 40%</li> -->
+                <li>Humidity: <span id="humidity">${
+                  weather.data.main.humidity
+                }</span>%</li>
+                <li >Wind: <span id="wind">${Math.round(
+                  weather.data.wind.speed
+                )} </span> km/h</li>
+            </ul>
+          </div>`;
+
+    todayInfo.innerHTML = todayState;
+
+    let celsius = null;
 
     function displayFahrenheitTemp(temp) {
       temp.preventDefault();
@@ -150,6 +175,7 @@ function cities(event) {
     let weatherState = document.getElementById("weatherApp");
     let state = weather.data.weather[0].main;
     if (state === "Snow") {
+      weatherState.classList.remove("base");
       weatherState.classList.remove("clear-sky");
       weatherState.classList.remove("clouds");
       weatherState.classList.remove("dust");
@@ -160,6 +186,7 @@ function cities(event) {
       weatherState.classList.remove("tornado");
       weatherState.classList.add("snowy");
     } else if (state === "Clear") {
+      weatherState.classList.remove("base");
       weatherState.classList.remove("snowy");
       weatherState.classList.remove("clouds");
       weatherState.classList.remove("dust");
@@ -170,6 +197,7 @@ function cities(event) {
       weatherState.classList.remove("tornado");
       weatherState.classList.add("clear-sky");
     } else if (state === "Clouds") {
+      weatherState.classList.remove("base");
       weatherState.classList.remove("snowy");
       weatherState.classList.remove("clear-sky");
       weatherState.classList.remove("dust");
@@ -180,6 +208,7 @@ function cities(event) {
       weatherState.classList.remove("tornado");
       weatherState.classList.add("clouds");
     } else if (state === "Thunderstorm") {
+      weatherState.classList.remove("base");
       weatherState.classList.remove("snowy");
       weatherState.classList.remove("clouds");
       weatherState.classList.remove("dust");
@@ -190,6 +219,7 @@ function cities(event) {
       weatherState.classList.remove("tornado");
       weatherState.classList.add("thunderstorm");
     } else if (state === "Drizzle" || state === "Rain") {
+      weatherState.classList.remove("base");
       weatherState.classList.remove("snowy");
       weatherState.classList.remove("clouds");
       weatherState.classList.remove("dust");
@@ -200,6 +230,7 @@ function cities(event) {
       weatherState.classList.remove("tornado");
       weatherState.classList.add("rainy");
     } else if (state === "Mist" || state === "Haze" || state === "Fog") {
+      weatherState.classList.remove("base");
       weatherState.classList.remove("snowy");
       weatherState.classList.remove("clouds");
       weatherState.classList.remove("dust");
@@ -215,6 +246,7 @@ function cities(event) {
       state === "Sand" ||
       state === "Ash"
     ) {
+      weatherState.classList.remove("base");
       weatherState.classList.remove("snowy");
       weatherState.classList.remove("clouds");
       weatherState.classList.remove("rainy");
@@ -225,6 +257,7 @@ function cities(event) {
       weatherState.classList.remove("tornado");
       weatherState.classList.add("dust");
     } else if (state === "Squall") {
+      weatherState.classList.remove("base");
       weatherState.classList.remove("snowy");
       weatherState.classList.remove("clouds");
       weatherState.classList.remove("dust");
@@ -235,6 +268,7 @@ function cities(event) {
       weatherState.classList.remove("tornado");
       weatherState.classList.add("stormy");
     } else if (state === "Tornado") {
+      weatherState.classList.remove("base");
       weatherState.classList.remove("snowy");
       weatherState.classList.remove("clouds");
       weatherState.classList.remove("dust");
