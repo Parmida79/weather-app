@@ -43,23 +43,37 @@ update.innerHTML = `↻ Updated at ${hour}:${minute} on ${
 } ${date} ${month[now.getMonth()]}`;
 
 //forecast
-function displayForecast() {
+function formatDay(time) {
+  let date = new Date(time * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+function displayForecast(response) {
+  let forecastReports = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   let forecast = `<div class="row">`;
-  days.forEach(function (day) {
-    forecast =
-      forecast +
-      `<div class="col-2">
+  forecastReports.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecast =
+        forecast +
+        `<div class="col-2">
             <ul>
-              <li class="future-day">${day}</li>
-              <li><i class="fas fa-cloud-sun future-icon"></i></li>
-              <li class="future-degree"><span class="high">7°</span> | <span class="low">3°</span></li>
+              <li class="future-day">${formatDay(forecastDay.dt)}</li>
+              <li><img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"></li>
+              <li class="future-degree"><span class="high">${Math.round(
+                forecastDay.temp.max
+              )}°</span> | <span class="low">${Math.round(
+          forecastDay.temp.min
+        )}°</span></li>
             </ul>
           </div>`;
-          
-    forecastElement.innerHTML = forecast;
+    }
   });
+  forecastElement.innerHTML = forecast;
 }
 
 function getForecast(coordinates) {
