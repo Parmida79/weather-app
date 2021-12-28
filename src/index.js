@@ -108,7 +108,7 @@ function cities(event) {
               }@2x.png" id="todayIcon"></li>
             </ul>
           </div>
-          <div class="col-4 column-2">
+          <div class="col-5 column-2">
             <ul>
               <li><h1 class="city" id="cityName">${city}</h1></li>
               <li>Feels like: <span id="feelslike">${Math.round(
@@ -119,13 +119,13 @@ function cities(event) {
               }</li>
             </ul>
           </div>
-          <div class="col-4 column-3">
+          <div class="col-3 column-3">
             <ul>
               <li>
                 <h2 class="current-weather"><strong class="current-temp" id="temp">${Math.round(
                   weather.data.main.temp
                 )}</strong>
-    <span class="unit"><a href="#" class="unit-name active" id="celsiusLink">ºC </a>|<a href="#" class="unit-name" id="fahrenheitLink"> ºF</a></span></h2></li>
+    <span class="unit">ºC</span></h2></li>
     <li><p class="high-low"><i class="fas fa-sort-up high"><span id="tempHigh">${Math.round(
       weather.data.main.temp_max
     )}</span>°c </i><br><i class="fas fa-sort-down low"><span id="tempLow">${Math.round(
@@ -146,34 +146,6 @@ function cities(event) {
           </div>`;
 
     todayInfo.innerHTML = todayState;
-
-    let celsius = null;
-    celsius = document.querySelector("#temp").innerHTML = Math.round(
-      weather.data.main.temp
-    );
-
-    function displayFahrenheitTemp(temp) {
-      temp.preventDefault();
-      let temperature = document.querySelector("#temp");
-      celsiusLink.classList.remove("active");
-      fahrenheitLink.classList.add("active");
-      let fahrenheitTemp = (celsius * 9) / 5 + 32;
-      temperature.innerHTML = Math.round(fahrenheitTemp);
-    }
-
-    function displayCelsiusTemp(temp) {
-      temp.preventDefault();
-      celsiusLink.classList.add("active");
-      fahrenheitLink.classList.remove("active");
-      let temperature = document.querySelector("#temp");
-      temperature.innerHTML = Math.round(celsius);
-    }
-
-    let fahrenheitLink = document.querySelector("#fahrenheitLink");
-    fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-    let celsiusLink = document.querySelector("#celsiusLink");
-    celsiusLink.addEventListener("click", displayCelsiusTemp);
 
     let weatherState = document.getElementById("weatherApp");
     let state = weather.data.weather[0].main;
