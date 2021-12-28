@@ -47,22 +47,26 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   let forecast = `<div class="row">`;
-  days.forEach(function (day){
-  forecast =
-    forecast +
-    `<div class="col-2">
+  days.forEach(function (day) {
+    forecast =
+      forecast +
+      `<div class="col-2">
             <ul>
               <li class="future-day">${day}</li>
               <li><i class="fas fa-cloud-sun future-icon"></i></li>
               <li class="future-degree"><span class="high">7°</span> | <span class="low">3°</span></li>
             </ul>
           </div>`;
- 
-  forecastElement.innerHTML = forecast;
- })
+          
+    forecastElement.innerHTML = forecast;
+  });
 }
 
-displayForecast();
+function getForecast(coordinates) {
+  let apiKey = "46fa9b2a7a670b1f86d7ab4f5f7ed552";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 // search engine
 let apiKey = "46fa9b2a7a670b1f86d7ab4f5f7ed552";
@@ -131,7 +135,6 @@ function cities(event) {
 
     let weatherState = document.getElementById("weatherApp");
     let state = weather.data.weather[0].main;
-
     if (state === "Snow") {
       weatherState.classList.remove("clear-sky");
       weatherState.classList.remove("clouds");
@@ -228,6 +231,7 @@ function cities(event) {
       weatherState.classList.remove("rainy");
       weatherState.classList.add("tornado");
     }
+    getForecast(weather.data.coord); //for forecast
   }
 
   axios.get(apiUrlCity).then(showWeather);
