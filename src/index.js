@@ -94,7 +94,6 @@ function cities(event) {
   let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   function showWeather(weather) {
-    console.log(weather.data); //ignore it
 
     let todayInfo = document.querySelector("#todayInfo");
     let todayState = `<div class="row">`;
@@ -108,7 +107,7 @@ function cities(event) {
               }@2x.png" id="todayIcon"></li>
             </ul>
           </div>
-          <div class="col-5 column-2">
+          <div class="col-4 column-2">
             <ul>
               <li><h1 class="city" id="cityName">${city}</h1></li>
               <li>Feels like: <span id="feelslike">${Math.round(
@@ -119,7 +118,7 @@ function cities(event) {
               }</li>
             </ul>
           </div>
-          <div class="col-3 column-3">
+          <div class="col-4 column-3">
             <ul>
               <li>
                 <h2 class="current-weather"><strong class="current-temp" id="temp">${Math.round(
@@ -272,7 +271,6 @@ function showCurrentLocation() {
     let apiUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
     function showCurrentPosition(currentPosition) {
-      console.log(currentPosition); //ignore it
 
       let cityName = document.querySelector("#cityName");
       cityName.innerHTML = currentPosition.data.name;
@@ -302,6 +300,8 @@ function showCurrentLocation() {
           "src",
           `http://openweathermap.org/img/wn/${currentPosition.data.weather[0].icon}@2x.png`
         );
+
+        getForecast(currentPosition.data.coord);
     }
 
     axios.get(apiUrlCurrent).then(showCurrentPosition);
